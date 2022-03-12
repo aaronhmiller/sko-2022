@@ -10,15 +10,15 @@ Nick & Aaron here...helping others learn about a couple of our favorite technolo
 # Setting up Salt's Inline Solution
 As you can see above, Salt's Plugin mirrors traffic being proxied by Kong.
 
-To accomplish this, the plugin takes the following three required parameters (review [the doc](https://saltsecurity.atlassian.net/wiki/spaces/PROD/pages/461930619/Kong+1.3+Traffic+Collector+Deployment+Guide) for all):
+To accomplish this, the plugin takes the following three required parameters (review [the doc](https://saltsecurity.atlassian.net/wiki/spaces/PROD/pages/461930619/Kong+1.3+Traffic+Collector+Deployment+Guide) for the others):
 
 | Parameter      | Description |
 | ----------- | ----------- |
-| salt_url      | \[hybrid_url\|https://traffic-receiver-http-ns-a.dnssf.com]   |
+| salt_url      | \[hybrid_url \| https://traffic-receiver-http-ns-a.dnssf.com]   |
 | salt_token   | <YOUR_TRAFFIC_COLLECTION_INSTALLATION_TOKEN>        |
 | salt_uuid    | https://httpbin.org/uuid |   
 
-Let's assume you've cloned this repo and are in the sko-2022 directory.
+### Let's assume you've cloned this repo and are in the sko-2022 directory...
 
 1. `docker-compose up -d`
 This spins up a pre-built container of Kong with [Salt's Kong Policy](https://admin-panel-prod-a.secured-api.com/#/downloads) loaded in
@@ -28,9 +28,9 @@ Because we haven't yet started proxying anything, if you run `curl localhost` or
 2. edit the httpbin.yaml file, insert your TOKEN, save and exit.
 
 3. `curl -X POST localhost:8001/config -F config=@httpbin.yaml`
-This loads the file you just configured.
+This loads the file you just configured which in addition to the plugin definition, contains a definition for a service and its route.
 
-4. `curl localhost/anything` to see https://httpbin.org/anything reverse-proxied and the traffic mirrored to Datadog
+4. `curl localhost/anything` to see https://httpbin.org/anything reverse-proxied and the traffic mirrored to Datadog. This is Kong proxying, on port 80, the httpbin.org service.
 5. `curl localhost:8001/plugins` to review what was configured for the Salt Plugin
 
 # Next Steps
