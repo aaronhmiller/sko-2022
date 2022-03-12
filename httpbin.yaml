@@ -1,0 +1,15 @@
+_format_version: "2.1"
+
+services:
+- name: httpbin
+  url: http://httpbin.org/
+  plugins:
+  - name: salt-sensor
+    config:
+      salt_url: https://traffic-receiver-http-ns-a.dnssf.com
+      salt_token: <YOUR_TOKEN_HERE> 
+      salt_uuid: d1f0c723-2db2-4382-9903-034fd99b3ebc
+  routes:
+  - name: httpbin-route
+    paths:
+    - /
