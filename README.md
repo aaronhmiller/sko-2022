@@ -35,5 +35,6 @@ This loads the file you just configured.
 
 # Next Steps
 - Setup a Hybrid and configure the httpbin.yaml file to talk to it instead
+- Review [the documentation](https://saltsecurity.atlassian.net/wiki/spaces/PROD/pages/461930619/Kong+1.3+Traffic+Collector+Deployment+Guide)
 - Try configuring the Salt Plugin to operate on all services and not just one
 - Try mirroring traffic for one service but not another
