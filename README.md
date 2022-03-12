@@ -1,5 +1,5 @@
 # sko-2022
-Helping others learn about a couple of my favorite technologies...Salt and Kong!
+Nick & Aaron here...helping others learn about a couple of our favorite technologies...Salt and Kong!
 
 <img src=https://user-images.githubusercontent.com/223486/157987198-8ebf4b8a-1b02-4b5c-b5c9-5a8d6bae290f.png width="600px">
 
